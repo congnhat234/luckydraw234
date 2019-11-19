@@ -1,0 +1,7 @@
+<h2><%= @draw_list.title %></h2>
+<%= link_to "New item", new_draw_item_path(draw_list_id: @draw_list.id) %>
+<ul>
+  <% @draw_items.each do |draw_item| %>
+    <li><%= link_to draw_item.fullname, draw_item_path(draw_item) %> | <%= link_to "Delete", draw_item_path(draw_item), method: :delete %></li>
+  <% end %>
+</ul>

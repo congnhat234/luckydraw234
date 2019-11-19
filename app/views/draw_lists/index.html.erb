@@ -1,0 +1,8 @@
+<%= link_to "Home", root_path %>
+<%= link_to "New list", new_draw_list_path %>
+<ul>
+  <% @draw_lists.each do |draw_list| %>
+    <li><%= link_to draw_list.title, draw_list_path(draw_list) %> | <%= link_to "Delete", draw_list_path(draw_list), method: :delete %> |
+    <%= link_to "Edit", edit_draw_list_path(draw_list) %></li>
+  <% end %>
+</ul>
